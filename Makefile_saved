@@ -6,7 +6,7 @@
 #    By: struxill <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 17:08:50 by struxill          #+#    #+#              #
-#    Updated: 2019/04/13 18:54:25 by struxill         ###   ########.fr        #
+#    Updated: 2019/04/13 18:49:31 by struxill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,10 +26,17 @@ LIB		= $(LIBPATH)libft.a
 all : $(NAME)
 
 $(NAME): $(LIB) $(OBJECTS)
+##	make -C $(LIBPATH)
+##	cd $(LIBPATH) && (MAKE)
+##	make library
 	$(CC) $(CFLAGS) -L$(LIBPATH) -lft -o $(NAME) $(OBJECTS)
 
 $(LIB): $(LIBPATH)*.c
 	make -C $(LIBPATH)
+
+##library: $(LIBPATH)*.c 			##$(LIBPATH)$(wildcard .c) 
+##	make -C $(LIBPATH)
+##	cd $(LIBPATH) && (MAKE)
 
 clean:
 	rm -f $(OBJECTS)
