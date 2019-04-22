@@ -16,7 +16,7 @@ t_triminos		ft_assign_values(char *str, int nb, int i, int j)
 {
 	t_triminos	minos;
 
-	while (nb < 4)
+	while (nb < 4 && str[i + (j * 5)])
 	{
 		if (str[i + (j * 5)] == '#')
 		{
