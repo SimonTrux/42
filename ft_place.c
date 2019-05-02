@@ -6,7 +6,7 @@
 /*   By: mybenzar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/22 18:27:26 by mybenzar          #+#    #+#             */
-/*   Updated: 2019/04/12 16:56:31 by struxill         ###   ########.fr       */
+/*   Updated: 2019/04/22 22:21:42 by struxill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_find(char **tab, int *l, int *c, int x_pos)
 		if (tab[i][j] == '\0')
 		{
 			j = 0;
+			*c = 0;
 			if (tab[i + 1])
 				i++;
 			else

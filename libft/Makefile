@@ -6,7 +6,7 @@
 #    By: struxill <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 21:48:46 by struxill          #+#    #+#              #
-#    Updated: 2019/03/22 13:31:37 by struxill         ###   ########.fr        #
+#    Updated: 2019/04/22 21:24:13 by struxill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,26 +39,27 @@ SRC_PER	= ft_putchar2.c ft_putstr2.c ft_isupper.c ft_islower.c ft_sqrt.c \
 		  ft_abs.c
 SOURCES	= $(SRC_STR) $(SRC_MEM) $(SRC_IS) $(SRC_COV) $(SRC_ADD) $(SRC_BON) $(SRC_PER)
 OBJECTS	= $(SOURCES:.c=.o)
+INC		= libft.h
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
-	@echo "\033[92mGCC Compilation\033[0m"
+$(NAME): $(OBJECTS) $(INC)
+	@echo "\033[92mLibft Objects compiled sucessfully.\033[0m"
 	@echo
-	@echo "\033[92mLibrary Creation\033[0m"
+	@echo "\033[92mLibrary Creation.\033[0m"
 	ar rc $(NAME) $(OBJECTS)
 	@echo
-	@echo "\033[92mRanlib\033[0m"
+	@echo "\033[92mRanlib.\033[0m"
 	ranlib $(NAME)
 	@echo
 
 clean:
-	@echo "\033[92mCleaning .o\033[0m"
+	@echo "\033[92mCleaning libft object files.\033[0m"
 	rm -f $(OBJECTS)
 	@echo
 
 fclean: clean
-	@echo "\033[92mRemoving Library\033[0m"
+	@echo "\033[92mRemoving libft.a.\033[0m"
 	rm -f $(NAME)
 	@echo
 
