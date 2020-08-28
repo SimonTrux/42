@@ -1,0 +1,4 @@
+en SSH, taper :
+
+su <username>
+il demande ensuite le password, on l'entre et nous voila connecte. 
